@@ -1,0 +1,15 @@
+build:
+  uri: https://gitlab.infoteach.ca/pedersenl/comp3910-assignment-3
+  ref: main
+  sourceSecret: lab01-secret
+deploy:
+  replicas: 1
+  env:
+    - name: MYSQL_DATABASE
+      value: Timesheet
+    - name: MYSQL_USER
+      value: stock
+    - name: MYSQL_PASSWORD
+      value: check
+    - name: MYSQL_DATASOURCE
+      value: timesheet
