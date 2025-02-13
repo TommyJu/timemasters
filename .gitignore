@@ -1,38 +1,45 @@
-*.class
-*.war
-.tern-project
-.forge_settings
-.metadata
-
-# Eclipse
-.classpath
-.project
-.settings/
-.faces-config.xml.jsfdia
-
-#VSCode
-.vscode/
- 
-# Intellij
-.idea/
-*.iml
-*.iws
- 
-# Mac
-.DS_Store
-
-.wildfly
- 
-# Maven
-log/
+#Maven
 target/
-*.bat
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
-pom.xml.next
 release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+.flattened-pom.xml
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+.factorypath
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Local environment
+.env
+
+# Plugin directory
+/.quarkus/cli/plugins/
+# TLS Certificates
+.certs/
