@@ -1,9 +1,11 @@
 package ca.bcit.timemasters.model;
 
+import java.io.Serializable;
+
 /**
  * Represents an Employee with associated credentials, role, and labour grade.
  */
-public class EmployeeBean {
+public class EmployeeBean implements Serializable {
     private int employeeId;
     private String name;
     private CredentialBean credentials;
@@ -19,7 +21,8 @@ public class EmployeeBean {
      * @param role        the role assigned to the employee
      * @param labourGrade the labour grade of the employee
      */
-    public EmployeeBean(int employeeId, String name, CredentialBean credentials, RoleBean role, LabourGradeBean labourGrade) {
+
+     public EmployeeBean(int employeeId, String name, CredentialBean credentials, RoleBean role, LabourGradeBean labourGrade) {
         this.employeeId = employeeId;
         this.name = name;
         this.credentials = credentials;
