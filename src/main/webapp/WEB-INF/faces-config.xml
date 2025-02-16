@@ -9,6 +9,9 @@
             <base-name>messages</base-name>
             <var>msgs</var>
         </resource-bundle>
+        <view-handler>
+            <facelet-handler-class>org.apache.myfaces.view.facelets.FaceletViewHandler</facelet-handler-class>
+        </view-handler>
     </application>
 
 </faces-config>
