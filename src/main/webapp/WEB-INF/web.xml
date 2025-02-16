@@ -17,9 +17,9 @@
       <servlet-name>jakarta.ws.rs.core.Application</servlet-name>
       <url-pattern>/api/*</url-pattern>
    </servlet-mapping>
-   <welcome-file-list>
-      <welcome-file>login.xhtml</welcome-file>
-   </welcome-file-list>
+  <welcome-file-list>
+    <welcome-file>index.xhtml</welcome-file>
+</welcome-file-list>
    <context-param>
       <param-name>jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
       <param-value>true</param-value>
@@ -28,5 +28,9 @@
       <param-name>jakarta.faces.PROJECT_STAGE</param-name>
       <param-value>Development</param-value>
    </context-param>
+    
+    <listener>
+        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
 </web-app>
 
