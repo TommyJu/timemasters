@@ -10,80 +10,126 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         .top-navbar {
+            position: fixed;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             background-color: #f8e7db;
-            padding: 10px 20px;
             border-bottom: 2px solid #c19a6b;
-        }
-
-        .logo img {
-            height: 40px;
+            height: 10vh;
+            padding: 0 2vw;
+            box-sizing: border-box;
+            z-index: 1000;
         }
 
         .username {
             display: flex;
             align-items: center;
+            gap: 1vw;
+        }
+
+        .username a {
+            text-decoration: none; /* Removes underline */
+            color: #333;
+            font-size: 2vw;
         }
 
         .user-icon {
-            width: 35px;
-            height: 35px;
+            width: 3vw;
+            height: 3vw;
+            min-width: 25px;
+            min-height: 25px;
             background-color: #ddd;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1vw;
         }
 
         .container {
             display: flex;
+            width: 100%;
+            height: calc(100vh - 10vh);
+            margin-top: 10vh;
         }
 
         .sidebar {
-            width: 200px;
+            width: 15vw;
+            min-width: 150px;
             background-color: #f8e7db;
-            padding: 15px;
             border-right: 2px solid #c19a6b;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            width: 100%;
         }
 
         .sidebar li {
-            padding: 10px 0;
+            width: 100%;
+        }
+
+        .sidebar-button {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers text horizontally */
+            width: 100%;
+            padding: 1.5vw 0;
+            font-size: 1vw;
+            color: #333;
+            background: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            text-decoration: none;
+        }
+
+        .sidebar-button:hover {
+            background-color: #e0c4a8;
+            color: #000;
+            border-left: 2px solid #c19a6b;
+            border-right: 2px solid #c19a6b;
         }
 
         .content {
             flex: 1;
-            padding: 20px;
+            padding: 2vw;
+            overflow-y: auto;
         }
+
     </style>
 </head>
 
 <body>
     <header>
-        <ui:include src="/sections/topnavbar.xhtml"/> <!-- Include the top navbar -->
+        <ui:include src="/sections/topnavbar.xhtml"/>
     </header>
 
     <div class="container">
-        <aside>
-            <ui:include src="/sections/sidebar.xhtml"/> <!-- Include the sidebar -->
+        <aside class="sidebar">
+            <ui:include src="/sections/sidebar.xhtml"/>
         </aside>
 
-        <main>
-            <ui:insert name="content"/> <!-- Content section -->
+        <main class="content">
+            <ui:insert name="content"/>
         </main>
     </div>
 
-    <footer>
-        <p>© 2025 My Application</p>
-    </footer>
 </body>
 </html>

@@ -5,11 +5,10 @@
 
 <ui:composition>
     <div class="top-navbar">
-        <!-- <div class="logo"> 
-            <h:graphicImage library="images" name="logo.png" alt="Logo"/>
-        </div> -->
         <div class="username">
-            <h:outputText value="Username" />
+            <h:link outcome="profile.xhtml">
+                <h:outputText value="Username" />
+            </h:link>
             <div class="user-icon">UN</div>
         </div>
     </div>

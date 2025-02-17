@@ -3,16 +3,18 @@
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets">
 
-<ui:composition>
-    <div class="sidebar">
-        <ul>
-            <li><h:link outcome="projects.xhtml" value="Projects"/></li>
-            <li><h:link outcome="timesheets.xhtml" value="Timesheets"/></li>
-            <li><h:link outcome="reports.xhtml" value="Reports"/></li>
-            <li><h:link outcome="employees.xhtml" value="Employees"/></li>
-            <li><h:link outcome="archive.xhtml" value="Archive"/></li>
-        </ul>
-    </div>
-</ui:composition>
+      <ui:composition>
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><h:link outcome="projects.xhtml" value="Projects" styleClass="sidebar-button"/></li>
+                    <li><h:link outcome="timesheets.xhtml" value="Timesheets" styleClass="sidebar-button"/></li>
+                    <li><h:link outcome="reports.xhtml" value="Reports" styleClass="sidebar-button"/></li>
+                    <li><h:link outcome="employees.xhtml" value="Employees" styleClass="sidebar-button"/></li>
+                    <li><h:link outcome="archive.xhtml" value="Archive" styleClass="sidebar-button"/></li>
+                </ul>
+            </div>
+        </div>
+    </ui:composition>
 
 </html>
