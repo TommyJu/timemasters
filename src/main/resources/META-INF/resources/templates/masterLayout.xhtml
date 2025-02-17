@@ -3,17 +3,84 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
 <head>
     <title><ui:insert name="title">Default Title</ui:insert></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8e7db;
+            padding: 10px 20px;
+            border-bottom: 2px solid #c19a6b;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .username {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f8e7db;
+            padding: 15px;
+            border-right: 2px solid #c19a6b;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>My Quarkus JSF App</h1>
+        <ui:include src="/sections/topnavbar.xhtml"/> <!-- Include the top navbar -->
     </header>
 
-    <main>
-        <ui:insert name="content"/>
-    </main>
+    <div class="container">
+        <aside>
+            <ui:include src="/sections/sidebar.xhtml"/> <!-- Include the sidebar -->
+        </aside>
+
+        <main>
+            <ui:insert name="content"/> <!-- Content section -->
+        </main>
+    </div>
 
     <footer>
         <p>© 2025 My Application</p>
