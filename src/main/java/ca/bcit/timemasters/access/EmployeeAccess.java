@@ -6,6 +6,8 @@ import ca.bcit.timemasters.model.RoleBean;
 import ca.bcit.timemasters.model.LabourGradeBean;
 
 import jakarta.annotation.Resource;
+import jakarta.ws.rs.GET;
+
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,47 +15,46 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+
+import javax.sql.DataSource;
+
 public class EmployeeAccess {
-    @Resource(mappedName = "java:jboss/datasources/TimeMasters")
+    @Resource(mappedName = "java:jboss/datasources/timemasters")
+    private DataSource dataSource;
 
-    //TODO implement all the model classes first
+    @GET
+    @Path("/employee/find/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public EmployeeBean find(@PathParam("id") int employeeId) {
+        return null;
+    }
 
-    // public EmployeeBean find(int employeeId) {
-    //     String query = "SELECT * FROM Employees WHERE employee_id = ?";
-    //     try (Connection connection = dataSource.getConnection();
-    //          PreparedStatement statement = connection.prepareStatement(query)) {
-    //         statement.setInt(1, employeeId);
-    //         ResultSet resultSet = statement.executeQuery();
-    //         if (resultSet.next()) {
-    //             return new EmployeeBean(
-    //                     resultSet.getInt("employee_id"),
-    //                     resultSet.getString("name"),
-    //                     new CredentialBean(
-    //                             resultSet.getString("username"),
-    //                             resultSet.getString("password")
-    //                     ),
-    //                     new RoleBean(
-    //                             resultSet.getString("role_name")
-    //                     ),
-    //                     new LabourGradeBean(
-    //                             resultSet.getString("grade_name")
-    //                     )
-    //             );
-    //         }
-
-    //     } catch () {
-
-    //     }
-    //     return null;
-    // }
-
-    public void remove(EmployeeBean employee) {
+    @DELETE
+    @Path("/employee/delete/{id}")
+    public void remove(@PathParam("id") int employeeId) {
         // remove employee
     }
+
+    @POST
+    @Path("/employee/insert")
+    @Consumes(MediaType.APPLICATION_JSON)
     public void insert(EmployeeBean employee) {
         // insert employee
     }
+
+    @PUT
+    @Path("/employee/update")
+    @Consumes(MediaType.APPLICATION_JSON)
     public void merge(EmployeeBean employee) {
         // merge employee
+    }
+
+    @GET
+    @Path("/employee/all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public EmployeeBean[] getAll() {
+        return null;
     }
 }
