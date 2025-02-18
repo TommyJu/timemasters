@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f0e5;
+    margin: 0;
+    padding: 0;
+    color: #2c2c2c;
+}
+
+.profile-header {
+    font-size: 26px;
+    font-weight: 700;
+    color: #8b0000;
+    border-bottom: 3px solid #8b0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-input-field {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px; /* Ensures inputs don't get too wide */
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.profile-password-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-change-password-btn {
+    background: #d32f2f;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+.profile-change-password-btn:hover {
+    background: #b71c1c;
+}
+
+.profile-divider {
+    margin: 30px 0;
+    border-top: 2px solid #8b0000;
+}
+
+.profile-supervisors h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #8b0000;
+    margin-bottom: 10px;
+}
+
+.profile-supervisors p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 16px;
+}
