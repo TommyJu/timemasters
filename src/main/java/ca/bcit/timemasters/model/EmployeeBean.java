@@ -44,4 +44,92 @@ public class EmployeeBean extends PanacheEntityBase {
     @Column(name = "sick_leave_balance")
     private Double sickLeaveBalance;
     
+    // Getters and Setters
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public EmployeeBean getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(EmployeeBean supervisor) {
+        this.supervisor = supervisor;
+    }
+
+    public EmployeeBean getTimesheetApprover() {
+        return timesheetApprover;
+    }
+
+    public void setTimesheetApprover(EmployeeBean timesheetApprover) {
+        this.timesheetApprover = timesheetApprover;
+    }
+
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public Boolean getIsBusinessManager() {
+        return isBusinessManager;
+    }
+
+    public void setIsBusinessManager(Boolean isBusinessManager) {
+        this.isBusinessManager = isBusinessManager;
+    }
+
+    public Boolean getIsHr() {
+        return isHr;
+    }
+
+    public void setIsHr(Boolean isHr) {
+        this.isHr = isHr;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Double getVacationBalance() {
+        return vacationBalance;
+    }
+
+    public void setVacationBalance(Double vacationBalance) {
+        this.vacationBalance = vacationBalance;
+    }
+
+    public Double getFlexHourBalance() {
+        return flexHourBalance;
+    }
+
+    public void setFlexHourBalance(Double flexHourBalance) {
+        this.flexHourBalance = flexHourBalance;
+    }
+
+    public Double getSickLeaveBalance() {
+        return sickLeaveBalance;
+    }
+
+    public void setSickLeaveBalance(Double sickLeaveBalance) {
+        this.sickLeaveBalance = sickLeaveBalance;
+    }
 }
