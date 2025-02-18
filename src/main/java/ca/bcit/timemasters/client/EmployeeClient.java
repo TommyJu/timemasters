@@ -11,6 +11,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.core.Response;
 
+@Dependent
 public class EmployeeClient implements Serializable{
 
     ExternalContext ex = FacesContext.getCurrentInstance().getExternalContext();

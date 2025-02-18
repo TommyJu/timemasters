@@ -2,15 +2,21 @@ package ca.bcit.timemasters.manager;
 
 import java.util.List;
 import ca.bcit.timemasters.model.EmployeeBean;
+import jakarta.enterprise.context.SessionScoped;
 import ca.bcit.timemasters.client.EmployeeClient;
 
 import java.io.Serializable;
+import jakarta.inject.Named;
+import jakarta.inject.Inject;
 
+@SessionScoped
+@Named
 public class EmployeeManager implements Serializable {
-
+    @Inject
+    private EmployeeClient employeeClient;
+    
     private EmployeeBean currentUser;
     private List<EmployeeBean> employees;
-    private EmployeeClient employeeClient;
 
     public EmployeeBean getCurrentUser() {
         return currentUser;

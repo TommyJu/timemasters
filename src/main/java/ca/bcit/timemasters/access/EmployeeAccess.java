@@ -1,23 +1,10 @@
 package ca.bcit.timemasters.access;
 
 import ca.bcit.timemasters.model.EmployeeBean;
-import ca.bcit.timemasters.model.CredentialBean;
-import ca.bcit.timemasters.model.RoleBean;
-import ca.bcit.timemasters.model.LabourGradeBean;
 
 import jakarta.annotation.Resource;
-import jakarta.ws.rs.GET;
-
-import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-
 import javax.sql.DataSource;
 
 public class EmployeeAccess {
