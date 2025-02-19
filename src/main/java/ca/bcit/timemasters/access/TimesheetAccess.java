@@ -16,14 +16,14 @@ public class TimesheetAccess {
     private DataSource dataSource;
 
     @GET
-    @Path("{id}")
+    @Path("/find/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public TimesheetBean find(@PathParam("id") int id) {
         return null;
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/remove/{id}")
     public void remove(@PathParam("id") int id) {
 
     }
@@ -50,24 +50,28 @@ public class TimesheetAccess {
     }
 
     @PUT
+    @Path("/persist-timesheet/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void insert(TimesheetBean bean) {
+    public void persist(TimesheetBean bean) {
 
     }
 
     @PUT
+    @Path("/persist-row/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void insert(TimesheetRowBean bean) {
+    public void persist(TimesheetRowBean bean) {
 
     }
 
     @PUT
+    @Path("/merge-timesheet/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void merge(TimesheetBean bean) {
 
     }
 
     @PUT
+    @Path("/merge-row/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void merge(TimesheetRowBean bean) {
 

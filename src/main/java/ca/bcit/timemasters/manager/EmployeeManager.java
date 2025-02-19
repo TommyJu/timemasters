@@ -30,6 +30,8 @@ public class EmployeeManager implements Serializable {
         Collections.addAll(employees, employeeClient.getAll());
     };
 
+    // START: Methods
+
     public void persistEmployee(EmployeeBean employee) {
         employees.add(employee);
         employeeClient.persist(employee);
@@ -47,6 +49,8 @@ public class EmployeeManager implements Serializable {
     public EmployeeBean findEmployee(int employeeId) {
         return employeeClient.find(employeeId);
     }
+
+    // END: Methods
 
 
     // START: Getters and setters
