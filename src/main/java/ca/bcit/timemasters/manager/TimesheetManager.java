@@ -15,19 +15,29 @@ import java.util.List;
 public class TimesheetManager implements Serializable {
     @Inject
     EmployeeManager employeeManager;
-    List<TimesheetBean> timesheets;
+    @Inject
+    ProjectManager projectManager;
+    @Inject
+    WorkPackageManager workPackageManager;
+    @Inject
     TimesheetClient timesheetClient;
 
+    private List<TimesheetBean> timesheets;
+
+    public TimesheetManager() {
+
+    }
+
     public TimesheetBean[] getTimesheets() {
-        return null;
+        return timesheetClient.getAllForEmployee(employeeManager.getCurrentUser());
     }
 
     public TimesheetRowBean[] getTimesheetRowsForProject(int projectId) {
-        return null;
+        return timesheetClient.getAllForProject(projectManager.getCurrentProject());
     }
 
     public TimesheetRowBean[] getTimesheetRowsForWorkPackage(int workPackageId) {
-        return null;
+        return timesheetClient.getAllForWorkPackage(workPackageManager.getCurrentWorkPackage());
     }
     
 }

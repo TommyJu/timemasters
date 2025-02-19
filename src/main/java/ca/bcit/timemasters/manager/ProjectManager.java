@@ -12,14 +12,14 @@ import java.io.Serializable;
 @Named
 public class ProjectManager implements Serializable {
     @Inject
-    EmployeeManager employeeManager;
+    private EmployeeManager employeeManager;
 
     @Inject
-    TimesheetManager timesheetManager;
+    private TimesheetManager timesheetManager;
 
     @Inject
-    WorkPackageManager workPackageManager;
-    ProjectClient projectClient;
+    private WorkPackageManager workPackageManager;
+    private ProjectClient projectClient;
 
     private ProjectBean currentProject;
 

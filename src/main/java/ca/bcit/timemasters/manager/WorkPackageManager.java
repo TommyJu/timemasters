@@ -8,15 +8,15 @@ import jakarta.inject.Named;
 
 import java.io.Serializable;
 
-@SessionScoped
+
 @Named
+@SessionScoped
 public class WorkPackageManager implements Serializable {
     @Inject
-    EmployeeManager employeeManager;
+    private EmployeeManager employeeManager;
     @Inject
-    TimesheetManager timesheetManager;
-    @Inject
-    WorkPackageClient workPackageClient;
+    private TimesheetManager timesheetManager;
+    private WorkPackageClient workPackageClient;
 
     private WorkPackageBean currentWorkPackage;
 
