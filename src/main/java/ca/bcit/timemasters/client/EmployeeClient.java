@@ -34,7 +34,7 @@ public class EmployeeClient implements Serializable{
     public void persist(EmployeeBean employee) {
         // persist employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/insert")
+        client.target(baseURI + "/employee/persist")
                 .request()
                 .post(Entity.json(employee));
         client.close();
@@ -42,22 +42,22 @@ public class EmployeeClient implements Serializable{
     public void merge(EmployeeBean employee) {
         // merge employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/update")
+        client.target(baseURI + "/employee/merge")
                 .request()
                 .put(Entity.json(employee));
         client.close();
     }
-    public void remove(EmployeeBean employee) {
+    public void remove(int employeeId) {
         // remove employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/delete/" + employee.getEmployeeId())
+        client.target(baseURI + "/employee/remove/" + employeeId)
                 .request()
                 .delete();
         client.close();
     }
     public EmployeeBean[] getAll() {
         Client client = ClientBuilder.newClient();
-        Response response = client.target(baseURI + "/employee/all")
+        Response response = client.target(baseURI + "/employee/get-all")
                 .request()
                 .get();
         EmployeeBean[] employees = response.readEntity(EmployeeBean[].class);

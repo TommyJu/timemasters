@@ -32,7 +32,7 @@ public class WorkPackageClient {
     public void persist(WorkPackageBean workpackage) {
         // persist workpackage
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/workpackage/insert")
+        client.target(baseURI + "/workpackage/persist")
                 .request()
                 .post(Entity.json(workpackage));
         client.close();
@@ -40,7 +40,7 @@ public class WorkPackageClient {
     public void merge(WorkPackageBean workpackage) {
         // merge workpackage
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/workpackage/update")
+        client.target(baseURI + "/workpackage/merge")
                 .request()
                 .put(Entity.json(workpackage));
         client.close();
@@ -48,7 +48,7 @@ public class WorkPackageClient {
     public void remove(int workpackageId) {
         // remove workpackage
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/workpackage/delete/" + workpackageId)
+        client.target(baseURI + "/workpackage/remove/" + workpackageId)
                 .request()
                 .delete();
         client.close();

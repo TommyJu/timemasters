@@ -19,9 +19,10 @@ public class EmployeeAccess {
     }
 
     @DELETE
-    @Path("/employee/delete/{id}")
+    @Path("/employee/remove/{id}")
     public void remove(@PathParam("id") int employeeId) {
         // remove employee
+
     }
 
     @POST
@@ -32,14 +33,14 @@ public class EmployeeAccess {
     }
 
     @PUT
-    @Path("/employee/update")
+    @Path("/employee/merge")
     @Consumes(MediaType.APPLICATION_JSON)
     public void merge(EmployeeBean employee) {
         // merge employee
     }
 
     @GET
-    @Path("/employee/all")
+    @Path("/employee/get-all")
     @Produces(MediaType.APPLICATION_JSON)
     public EmployeeBean[] getAll() {
         return null;

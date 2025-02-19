@@ -19,20 +19,20 @@ public class WorkPackageAccess {
     }
 
     @DELETE
-    @Path("/workpackage/delete/{id}")
+    @Path("/workpackage/remove/{id}")
     public void remove(@PathParam("id") int workpackageId) {
         // remove WP
     }
 
     @POST
-    @Path("/workpackage/insert")
+    @Path("/workpackage/persist")
     @Consumes(MediaType.APPLICATION_JSON)
     public void insert(WorkPackageBean workpackage) {
         // insert WP
     }
 
     @PUT
-    @Path("/workpackage/update")
+    @Path("/workpackage/merge")
     @Consumes(MediaType.APPLICATION_JSON)
     public void merge(WorkPackageBean workpackage) {
         // merge WP
