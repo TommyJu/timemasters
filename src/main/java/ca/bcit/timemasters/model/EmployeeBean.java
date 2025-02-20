@@ -20,6 +20,14 @@ public class EmployeeBean extends PanacheEntityBase {
     @JoinColumn(name = "timesheet_approver_id", referencedColumnName = "employee_id")
     private EmployeeBean timesheetApprover;
 
+    @ManyToOne
+    @JoinColumn(name = "labour_grade_id", referencedColumnName = "labour_grade_id")
+    private LabourGradeBean labourGrade;
+
+    @ManyToOne
+    @JoinColumn(name = "credential_id", referencedColumnName = "credential_id")
+    private CredentialBean credentials;
+
     @Column(name = "is_admin")
     private Boolean isAdmin;
 
@@ -43,8 +51,13 @@ public class EmployeeBean extends PanacheEntityBase {
 
     @Column(name = "sick_leave_balance")
     private Double sickLeaveBalance;
+
+    //No Argument Constructor
+    public EmployeeBean() {
+
+    }
     
-    // Getters and Setters
+    //Getters and Setters
     public Long getEmployeeId() {
         return employeeId;
     }
