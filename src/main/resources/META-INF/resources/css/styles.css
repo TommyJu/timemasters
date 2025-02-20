@@ -1,25 +1,116 @@
 body {
-    font-family: sans-serif;
-    margin: 0; /* Remove default body margin */
-    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-header {
-    background-color: #f0f0f0;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    padding: 1em;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    position: fixed; /* Fixed to the bottom */
-    bottom: 0;
+.top-navbar {
+    position: fixed;
     width: 100%;
+    display: flex;
+    justify-content: space-between; /* Keeps username on the right and logo on the left */
+    align-items: center;
+    background-color: #f8e7db;
+    border-bottom: 2px solid #c19a6b;
+    height: 15vh; /* Increased navbar height to give more space */
+    padding: 0 2vw;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.username a {
+    text-decoration: none; /* Removes underline */
+    color: #333;
+    font-size: 2vw;
+}
+
+.user-icon {
+    width: 3vw;
+    height: 3vw;
+    min-width: 25px;
+    min-height: 25px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+}
+
+/* Logo styling */
+.logo img {
+    width: 5vw; 
+    height: auto;
+    max-width: 100px; 
+    padding: 0; /* Remove padding to keep the logo from moving */
+    margin-top: 0; /* Ensure logo is centered */
+    margin-bottom: 0; /* Remove any bottom margin */
+}
+
+/* Sidebar and content adjustments */
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 15vh); /* Adjust height to account for the increased navbar height */
+    margin-top: 15vh; /* Adjust for new navbar height */
+}
+
+.sidebar {
+    width: 15vw;
+    min-width: 150px;
+    background-color: #f8e7db;
+    border-right: 2px solid #c19a6b;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers text horizontally */
+    width: 100%;
+    padding: 1.5vw 0;
+    font-size: 1vw;
+    color: #333;
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    text-decoration: none;
+}
+
+.sidebar-button:hover {
+    background-color: #e0c4a8;
+    color: #000;
+    border-left: 2px solid #c19a6b;
+    border-right: 2px solid #c19a6b;
+}
+
+.content {
+    flex: 1;
+    padding: 2vw;
+    overflow-y: auto;
 }
