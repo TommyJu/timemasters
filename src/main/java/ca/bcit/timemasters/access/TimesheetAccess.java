@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 @Dependent
 @Path("/timesheet")
 public class TimesheetAccess {
-    @Resource(mappedName = "java:jboss/datasources/timemasters")
+    @Resource(mappedName = "java:jboss/datasources/timemaster")
     private DataSource dataSource;
 
     @GET

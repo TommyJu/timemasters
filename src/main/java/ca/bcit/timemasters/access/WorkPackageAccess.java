@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 import javax.sql.DataSource;
 
 public class WorkPackageAccess {
-    @Resource(mappedName = "java:jboss/datasources/timemasters")
+    @Resource(mappedName = "java:jboss/datasources/timemaster")
     private DataSource dataSource;
 
     @GET
