@@ -23,6 +23,11 @@ public class CredentialBean extends PanacheEntityBase {
 
     }
 
+    public CredentialBean(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     //Getters and Setters
     public Long getCredentialId() {
         return credentialId;
