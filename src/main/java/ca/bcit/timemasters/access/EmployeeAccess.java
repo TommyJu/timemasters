@@ -74,6 +74,5 @@ public class EmployeeAccess {
             System.out.println(e);
         }
         return employees.toArray(new EmployeeBean[0]);
-
     }
 }
