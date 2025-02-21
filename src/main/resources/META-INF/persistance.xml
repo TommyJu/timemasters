@@ -3,8 +3,15 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
               version="3.0">
-    <persistence-unit name="inventory-jpa">
-        <jta-data-source>java:jboss/datasources/timemaster</jta-data-source>
+    <persistence-unit name="timemaster-jpa">
+        <class>ca.bcit.timemasters.model.EmployeeBean</class>
+        <class>ca.bcit.timemasters.model.CredentialBean</class>
+        <class>ca.bcit.timemasters.model.LabourGrade</class>
+        <class>ca.bcit.timemasters.model.WorkPackageBean</class>
+        <class>ca.bcit.timemasters.model.LabourGradeBean</class>
+        <class>ca.bcit.timemasters.access.EmployeeAccess</class>
+        <class>ca.bcit.timemasters.access.TimesheetAccess</class>
+        <class>ca.bcit.timemasters.access.WorkPackageAccess</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>

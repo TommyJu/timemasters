@@ -70,6 +70,10 @@
             <artifactId>myfaces-quarkus</artifactId>
             <version>4.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

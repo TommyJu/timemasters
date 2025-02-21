@@ -3,6 +3,12 @@ package ca.bcit.timemasters.access;
 import ca.bcit.timemasters.model.EmployeeBean;
 
 import jakarta.annotation.Resource;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import javax.sql.DataSource;
@@ -15,7 +21,8 @@ import java.util.List;
 
 @Path("/employee")
 public class EmployeeAccess {
-    @Resource(mappedName = "java:jboss/datasources/timemaster")
+    @Inject
+    @PersistenceContext(unitName="timemaster-jpa") EntityManager em;
     private DataSource dataSource;
 
     @GET

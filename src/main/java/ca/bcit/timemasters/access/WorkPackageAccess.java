@@ -3,12 +3,15 @@ package ca.bcit.timemasters.access;
 import ca.bcit.timemasters.model.WorkPackageBean;
 
 import jakarta.annotation.Resource;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import javax.sql.DataSource;
 
 public class WorkPackageAccess {
-    @Resource(mappedName = "java:jboss/datasources/timemaster")
+    @PersistenceContext(unitName="timemaster-jpa")
+    EntityManager em;
     private DataSource dataSource;
 
     @GET
