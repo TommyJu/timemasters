@@ -32,25 +32,25 @@ public class EmployeeAccess {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public EmployeeBean find(@PathParam("id") int employeeId) {
-        return null;
+        TypedQuery<EmployeeBean> query = em.createQuery("SELECT e from EmployeeBean e WHERE e.employeeId = :param", EmployeeBean.class)
+                .setParameter("param", employeeId);
+        return query.getSingleResult();
     }
 
     @DELETE
-    @Path("/remove/{id}")
+    @Path("/{id}")
     public void remove(@PathParam("id") int employeeId) {
         // remove employee
 
     }
 
     @POST
-    @Path("/insert")
     @Consumes(MediaType.APPLICATION_JSON)
     public void insert(EmployeeBean employee) {
         // insert employee
     }
 
     @PUT
-    @Path("/merge")
     @Consumes(MediaType.APPLICATION_JSON)
     public void merge(EmployeeBean employee) {
         // merge employee
