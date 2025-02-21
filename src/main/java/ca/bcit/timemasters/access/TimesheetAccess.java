@@ -5,6 +5,7 @@ import ca.bcit.timemasters.model.TimesheetBean;
 import ca.bcit.timemasters.model.TimesheetRowBean;
 import jakarta.annotation.Resource;
 import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.*;
@@ -14,7 +15,7 @@ import javax.sql.DataSource;
 @Dependent
 @Path("/timesheet")
 public class TimesheetAccess {
-    @PersistenceContext(unitName="timemaster-jpa")
+    @Inject
     EntityManager em;
     private DataSource dataSource;
 

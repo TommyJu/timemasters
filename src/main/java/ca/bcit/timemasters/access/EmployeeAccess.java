@@ -21,8 +21,8 @@ import java.util.List;
 
 @Path("/employee")
 public class EmployeeAccess {
-    @Inject
-    @PersistenceContext(unitName="timemaster-jpa") EntityManager em;
+    @Inject 
+    EntityManager em;
     private DataSource dataSource;
 
     @GET

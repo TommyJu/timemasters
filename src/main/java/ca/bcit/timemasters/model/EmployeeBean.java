@@ -24,7 +24,7 @@ public class EmployeeBean extends PanacheEntityBase {
     @JoinColumn(name = "labour_grade_id", referencedColumnName = "labour_grade_id")
     private LabourGradeBean labourGrade;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "credential_id", referencedColumnName = "credential_id")
     private CredentialBean credentials;
 
