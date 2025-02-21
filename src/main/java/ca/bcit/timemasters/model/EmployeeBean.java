@@ -11,13 +11,11 @@ public class EmployeeBean {
     @Column(name = "employee_id")
     private Long employeeId;
 
-    @ManyToOne
-    @JoinColumn(name = "supervisor_id", referencedColumnName = "employee_id")
-    private EmployeeBean supervisor;
+    @Column(name = "supervisor_id")
+    private Long supervisor;
 
-    @ManyToOne
-    @JoinColumn(name = "timesheet_approver_id", referencedColumnName = "employee_id")
-    private EmployeeBean timesheetApprover;
+    @Column(name = "timesheet_approver_id")
+    private Long timesheetApprover;
 
     @ManyToOne
     @JoinColumn(name = "labour_grade_id", referencedColumnName = "labour_grade_id")
@@ -65,19 +63,19 @@ public class EmployeeBean {
         this.employeeId = employeeId;
     }
 
-    public EmployeeBean getSupervisor() {
+    public Long getSupervisor() {
         return supervisor;
     }
 
-    public void setSupervisor(EmployeeBean supervisor) {
+    public void setSupervisor(Long supervisor) {
         this.supervisor = supervisor;
     }
 
-    public EmployeeBean getTimesheetApprover() {
+    public Long getTimesheetApprover() {
         return timesheetApprover;
     }
 
-    public void setTimesheetApprover(EmployeeBean timesheetApprover) {
+    public void setTimesheetApprover(Long timesheetApprover) {
         this.timesheetApprover = timesheetApprover;
     }
 

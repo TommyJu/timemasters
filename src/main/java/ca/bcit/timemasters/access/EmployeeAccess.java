@@ -9,6 +9,7 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import javax.sql.DataSource;
@@ -58,21 +59,8 @@ public class EmployeeAccess {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public EmployeeBean[] getAll() {
-        List<EmployeeBean> employees = new ArrayList<>();
-        try(Connection connection = dataSource.getConnection();
-            Statement stmt = connection.createStatement()){
-            ResultSet result = (ResultSet) stmt
-                    .executeQuery("SELECT * FROM employee");
-            while (result.next()) {
-                EmployeeBean newEmployee = new EmployeeBean();
-                newEmployee.setEmployeeId(result.getLong("employee_id"));
-                newEmployee.setFirstName(result.getString("first_name"));
-                newEmployee.setLastName(result.getString("last_name"));
-                employees.add(newEmployee);
-            }
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-        return employees.toArray(new EmployeeBean[0]);
+        TypedQuery<EmployeeBean> query =  em.createQuery("SELECT e from EmployeeBean e", EmployeeBean.class);
+        List<EmployeeBean> employees = query.getResultList();
+        return employees.toArray(new EmployeeBean[employees.size()]);
     }
 }
