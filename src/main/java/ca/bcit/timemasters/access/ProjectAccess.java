@@ -41,8 +41,9 @@ public class ProjectAccess {
     }
 
     @GET
+    @Path("/employee/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ProjectBean[] getAllForEmployee(int employeeId){
+    public ProjectBean[] getAllForEmployee(@PathParam("id") int employeeId){
         return null;
     }
 }
