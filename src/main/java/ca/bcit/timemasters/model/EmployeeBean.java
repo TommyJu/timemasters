@@ -79,6 +79,22 @@ public class EmployeeBean {
         this.timesheetApprover = timesheetApprover;
     }
 
+    public LabourGradeBean getLabourGrade() {
+        return labourGrade;
+    }
+
+    public void setLabourGrade(LabourGradeBean labourGrade) {
+        this.labourGrade = labourGrade;
+    }
+
+    public CredentialBean getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(CredentialBean credentials) {
+        this.credentials = credentials;
+    }
+
     public Boolean getIsAdmin() {
         return isAdmin;
     }

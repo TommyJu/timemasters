@@ -20,11 +20,11 @@ public class EmployeeClient implements Serializable{
             + ex.getRequestServerName() + ":"
             + ex.getRequestServerPort()
             + ex.getRequestContextPath()
-            + "/api";
+            + "/employee";
 
     public EmployeeBean find(int employeeId) {
         Client client = ClientBuilder.newClient();
-        Response response = client.target(baseURI + "/employee/find/" + employeeId)
+        Response response = client.target(baseURI + "/" + employeeId)
                 .request()
                 .get();
         EmployeeBean employee = response.readEntity(EmployeeBean.class);
@@ -34,7 +34,7 @@ public class EmployeeClient implements Serializable{
     public void persist(EmployeeBean employee) {
         // persist employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/persist")
+        client.target(baseURI)
                 .request()
                 .post(Entity.json(employee));
         client.close();
@@ -42,7 +42,7 @@ public class EmployeeClient implements Serializable{
     public void merge(EmployeeBean employee) {
         // merge employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/merge")
+        client.target(baseURI)
                 .request()
                 .put(Entity.json(employee));
         client.close();
@@ -50,14 +50,14 @@ public class EmployeeClient implements Serializable{
     public void remove(int employeeId) {
         // remove employee
         Client client = ClientBuilder.newClient();
-        client.target(baseURI + "/employee/remove/" + employeeId)
+        client.target(baseURI + "/"+ employeeId)
                 .request()
                 .delete();
         client.close();
     }
     public EmployeeBean[] getAll() {
         Client client = ClientBuilder.newClient();
-        Response response = client.target(baseURI + "/employee/get-all")
+        Response response = client.target(baseURI)
                 .request()
                 .get();
         EmployeeBean[] employees = response.readEntity(EmployeeBean[].class);
