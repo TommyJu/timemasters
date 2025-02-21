@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 public class WorkPackageAccess {
     @Inject
     EntityManager em;
-    private DataSource dataSource;
+    @Inject private DataSource dataSource;
 
     @GET
     @Path("/workpackage/find/{id}")

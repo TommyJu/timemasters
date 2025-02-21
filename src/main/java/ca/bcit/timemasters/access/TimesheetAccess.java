@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 public class TimesheetAccess {
     @Inject
     EntityManager em;
-    private DataSource dataSource;
+    @Inject private DataSource dataSource;
 
     @GET
     @Path("/find/{id}")
