@@ -39,5 +39,5 @@ public class TimesheetManager implements Serializable {
     public TimesheetRowBean[] getTimesheetRowsForWorkPackage(int workPackageId) {
         return timesheetClient.getAllForWorkPackage(workPackageManager.getCurrentWorkPackage());
     }
-    
+
 }
