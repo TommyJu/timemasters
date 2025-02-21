@@ -10,8 +10,10 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.core.Response;
 
+import java.io.Serializable;
+
 @Dependent
-public class WorkPackageClient {
+public class WorkPackageClient implements Serializable {
     ExternalContext ex = FacesContext.getCurrentInstance().getExternalContext();
 
     String baseURI = ex.getRequestScheme() + "://"
