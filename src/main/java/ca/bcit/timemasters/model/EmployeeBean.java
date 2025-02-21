@@ -1,10 +1,9 @@
 package ca.bcit.timemasters.model;
 import jakarta.persistence.*;
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 @Entity
 @Table(name="employee")
-public class EmployeeBean extends PanacheEntityBase {
+public class EmployeeBean {
     
 
     @Id

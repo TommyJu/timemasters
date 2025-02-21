@@ -17,6 +17,8 @@ import javax.sql.DataSource;
 public class TimesheetAccess {
     @Inject
     EntityManager em;
+
+    @Inject
     private DataSource dataSource;
 
     @GET

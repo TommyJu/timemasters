@@ -1,10 +1,9 @@
 package ca.bcit.timemasters.model;
 import jakarta.persistence.*;
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 @Entity
 @Table(name="labour_grade")
-public class LabourGradeBean extends PanacheEntityBase {
+public class LabourGradeBean{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,11 +1,10 @@
 package ca.bcit.timemasters.model;
 import jakarta.persistence.*;
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 
 @Entity
 @Table(name="credential")
-public class CredentialBean extends PanacheEntityBase {
+public class CredentialBean {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

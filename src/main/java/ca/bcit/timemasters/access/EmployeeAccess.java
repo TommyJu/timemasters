@@ -23,6 +23,8 @@ import java.util.List;
 public class EmployeeAccess {
     @Inject 
     EntityManager em;
+
+    @Inject
     private DataSource dataSource;
 
     @GET
@@ -63,7 +65,7 @@ public class EmployeeAccess {
                     .executeQuery("SELECT * FROM employee");
             while (result.next()) {
                 EmployeeBean newEmployee = new EmployeeBean();
-                newEmployee.setEmployeeId(result.getLong("id"));
+                newEmployee.setEmployeeId(result.getLong("employee_id"));
                 newEmployee.setFirstName(result.getString("first_name"));
                 newEmployee.setLastName(result.getString("last_name"));
                 employees.add(newEmployee);

@@ -13,6 +13,8 @@ import javax.sql.DataSource;
 public class WorkPackageAccess {
     @Inject
     EntityManager em;
+
+    @Inject
     private DataSource dataSource;
 
     @GET
